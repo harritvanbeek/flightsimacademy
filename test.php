@@ -1,7 +1,4 @@
-
-
-<?php 
-    die;
+<?php     
     define('_BOANN', 1);
     define('BPATH_BASE',    dirname(__FILE__) );
 
@@ -32,7 +29,9 @@
                 //debug($user->gps->lng, true);
                 //debug( $user->name, true);
                 //debug( $user, true);
-                //debug("--------------------------------------", true);
+                debug( $fshub->get("flight/{$user->id}")->data, true );
+                debug("--------------------------------------", true);
                 debug( $fshub->get("pilot/{$user->id}/flight")->data["0"], true );
             }
+            
         }

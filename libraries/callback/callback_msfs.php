@@ -30,9 +30,9 @@
                         $images     = strtolower($flight["aircraft"]["registration"]).".jpg";
                         
                         if(file_exists($ImgFolder.DS.$images)){
-                            $imgLocation = "./flightsim-academy/assets/wallpapers/{$images}";
+                            $imgLocation = "./assets/wallpapers/{$images}";
                         }else{
-                            $imgLocation = "./flightsim-academy/assets/wallpapers/no_images.jpg";
+                            $imgLocation = "./assets/wallpapers/no_images.jpg";
                             //$imgLocation = "https://www.boann.eu/flightsim-academy/assets/wallpapers/no_images.jpg";
                             //"no_images.jpg";
                         }
@@ -42,37 +42,37 @@
                             case "IVAO" :
                                 $network        = "IVAO";
                                 $networkLink    = "https://www.ivao.aero/";
-                                $networkImages  = "./flightsim-academy/assets/networks/ivao_gradient.png";
+                                $networkImages  = "./assets/networks/ivao_gradient.png";
                             break;
 
                             case "VATSIM" :
                                 $network        = "VATSIM";
                                 $networkLink    = "https://vatsim.net/";
-                                $networkImages  = "./flightsim-academy/assets/networks/vatsim_gradient.png";
+                                $networkImages  = "./assets/networks/vatsim_gradient.png";
                             break;
 
                             case "poscon" :
                                 $network        = "poscon";
                                 $networkLink    = "https://poscon.net/";
-                                $networkImages  = "./flightsim-academy/assets/networks/poscon_gradient.png";
+                                $networkImages  = "./assets/networks/poscon_gradient.png";
                             break;
 
                             case "pilotedge" :
                                 $network        = "poscon";
                                 $networkLink    = "https://www.pilotedge.net/";
-                                $networkImages  = "./flightsim-academy/assets/networks/pilotedge_gradient.png";
+                                $networkImages  = "./assets/networks/pilotedge_gradient.png";
                             break;
 
                             case "FSCloud" :
                                 $network        = "FSCloud";
                                 $networkLink    = "https://fsc24.org/";
-                                $networkImages  = "./flightsim-academy/assets/networks/fs_cloud_gradient.png";
+                                $networkImages  = "./assets/networks/fs_cloud_gradient.png";
                             break;
 
                             case "Offline" :
                                 $network        = "Offline";
                                 $networkLink    = "";
-                                $networkImages  = "./flightsim-academy/assets/networks/offline_gradient.png";
+                                $networkImages  = "./assets/networks/offline_gradient.png";
                             break;
 
                         }

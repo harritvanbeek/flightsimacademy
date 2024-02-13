@@ -87,8 +87,15 @@
                     </div>
                   </div>
                     
-                  <div class="login float-right">
+                  <div class="buttons float-right">                      
+                      <button class="login" type="button">
+                        <div class="fas fa-user"></div>
+                        <div class="long_text">basic</div>
+                      </button>
                       
+                      <button class="menu" type="button">
+                        <span class="fas fa-bars"></span>
+                      </button>                      
                   </div>
 
               </div>
