@@ -1,3 +1,4 @@
+<?php $env = NEW \classes\core\env; ?>
   <!DOCTYPE html>
   <html lang="en">
   <meta charset="UTF-8">
@@ -72,17 +73,24 @@
             <div class="container-fluid">
               <div class="col-md-4"></div>
               <div class="col-md-4">
-                <img class="logoImg" width="50%" alt="Flight Sim Academy" src="../assets/fsa_full_logo-logo.png">
+                <img class="logoImg" width="50%" alt="Flight Sim Academy" src="./assets/fsa_full_logo-logo.png">
               </div>
               <div class="col-md-4">
-                  <span class="items-baseline float-left">
-                    <span class="text-white text-base" ng-bind-html="setTime"></span>
-                    <span class="text-white text-xs">UTC</span>
-                  </span>
-
-                  <div class="searchBox float-right">
+                  <div class="float-left">
+                    <span class="items-baseline">
+                      <span class="text-white text-base" ng-bind-html="setTime"></span>
+                      <span class="text-white text-xs">UTC</span>
+                    </span>
+                    
+                    <div class="searchBox float-right">
                       <input class="form-control" id="searchBox" autocomplete="off" type="text" placeholder="" class="">                  
+                    </div>
                   </div>
+                    
+                  <div class="login float-right">
+                      
+                  </div>
+
               </div>
             </div>                      
           </div>
