@@ -1,6 +1,3 @@
-  <?php    
-    $env        = NEW \classes\core\env;
-  ?>
   <!DOCTYPE html>
   <html lang="en">
   <meta charset="UTF-8">
