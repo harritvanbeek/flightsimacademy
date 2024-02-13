@@ -1,0 +1,10 @@
+/.vscode/
+*.mp4
+*.env
+/dev/
+/node_modules/
+/testApi/
+configuration.php
+devConfig.php
+gulpfile.js
+sftp-config.json

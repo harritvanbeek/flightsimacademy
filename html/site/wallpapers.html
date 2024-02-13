@@ -1,0 +1,72 @@
+<div class="container" style="margin-top: 100px; margin-bottom: 50px;">
+
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-12 text-center">
+            <button data-toggle="modal" data-target="#basicExampleModal" class="btn btn-primary"><i class="fas fa-upload"></i> Upload</button>
+        </div>
+    </div>
+    
+    <div class="row">    
+            {{rvr}}    
+        <div class="col-md-4" ng-repeat="image in ImagesData" style="margin-bottom: 30px;">
+            <div class="card">
+                <img ng-src="{{image.scr}}">
+                <div class="card-body">
+                    <h5 class="text-white float-left" title="{{image.title}}" ng-bind-html="image.title"></h5>
+                    <div class="text-white float-right">
+                        <date ng-bind-html="image.date" style="padding-right: 10px;"></date>
+                        
+                        <a ng-href="{{image.scr}}" download>
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- upload model --> 
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-mdb-backdrop="static" data-mdb-keyboard="false">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Upload images</h5>        
+      </div>
+      <div class="modal-body">
+
+        
+
+        <div ng-if="error" class="alert alert-danger" role="alert">
+          <center ng-bind-html="error"></center>
+        </div>
+
+        <div ng-if="success" class="alert alert-success" role="alert">
+          <center ng-bind-html="success"></center>
+        </div>
+
+        <div>
+            <label>Pilot ID</label>
+            <input ng-model="from.pilotID" class="form-control">
+        </div>
+
+        <div id="uploads"></div>
+        <div class="dropzone" id="dropzone">
+            <span class="dropzone-icon">Upload</span>
+            <img width="350px" height="197px" class="dropImg" id="img" src="">
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="save(from)">Save changes</button>
+        <button type="button" class="btn btn-danger" ng-click="close()" >Reset</button>
+        <!-- data-dismiss="modal" -->
+      </div>
+    </div>
+  </div>
+</div>
+

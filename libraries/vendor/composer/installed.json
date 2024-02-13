@@ -1,0 +1,125 @@
+{
+    "packages": [
+        {
+            "name": "ballen/collection",
+            "version": "2.0.3",
+            "version_normalized": "2.0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/allebb/collection.git",
+                "reference": "a16251a8ccd144e01d3184604943e7edbfded054"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/allebb/collection/zipball/a16251a8ccd144e01d3184604943e7edbfded054",
+                "reference": "a16251a8ccd144e01d3184604943e7edbfded054",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.3.0|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0"
+            },
+            "time": "2022-12-25T00:20:22+00:00",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "Ballen\\Collection\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bobby Allen",
+                    "email": "ballen@bobbyallen.me",
+                    "homepage": "http://bobbyallen.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Collection library which provides OOP replacement for the traditional array data structure.",
+            "keywords": [
+                "array",
+                "collection",
+                "list"
+            ],
+            "support": {
+                "issues": "https://github.com/allebb/collection/issues",
+                "source": "https://github.com/allebb/collection/tree/2.0.3"
+            },
+            "install-path": "../ballen/collection"
+        },
+        {
+            "name": "fshub/sdk",
+            "version": "1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fshubio/fshub-sdk-php.git",
+                "reference": "da81177b3f60e71d68b6f0f98d06469d4c7bc086"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fshubio/fshub-sdk-php/zipball/da81177b3f60e71d68b6f0f98d06469d4c7bc086",
+                "reference": "da81177b3f60e71d68b6f0f98d06469d4c7bc086",
+                "shasum": ""
+            },
+            "require": {
+                "ballen/collection": "^2.0",
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "^2.11",
+                "phpstan/phpstan": "^1.4",
+                "phpunit/phpunit": "^9.0",
+                "squizlabs/php_codesniffer": "^3.6"
+            },
+            "time": "2022-04-06T15:09:25+00:00",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "FsHub\\Sdk\\": "src/",
+                    "FsHub\\Sdk\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Bobby Allen",
+                    "email": "ballen@bobbyallen.me",
+                    "homepage": "http://bobbyallen.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The official PHP SDK for FsHub.",
+            "keywords": [
+                "ICAO",
+                "flightsim",
+                "fshub",
+                "fshub.io",
+                "fsx",
+                "lrm",
+                "msfs2020",
+                "xplane"
+            ],
+            "support": {
+                "issues": "https://github.com/fshubio/fshub-sdk-php/issues",
+                "source": "https://github.com/fshubio/fshub-sdk-php/tree/1.0.0"
+            },
+            "install-path": "../fshub/sdk"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

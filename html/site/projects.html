@@ -1,0 +1,30 @@
+<div id="links" class="boannLinks">
+    <div class="container" style="margin-top: 100px; margin-bottom: 50px; color: white;">
+        <table class="table">
+            
+            <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Description</th>
+                    <th>URL</th>
+                    <th>language</th>
+                </tr>
+            </thead>
+
+            
+            <tbody>                
+                <tr ng-repeat="item in items">
+                    <td class="text-white" ng-bind-html="item.name"></td>
+                    <td class="text-white" ng-bind-html="item.description"></td>
+                    <td class="text-white">
+                        <a class="text-white" href="{{item.html_url}}" target="_blank"> 
+                            View on github
+                        </a>
+                    </td>
+                    <td class="text-white" ng-bind-html="item.language"></td>                    
+                </td>
+
+            </tbody>
+        </table>
+    </div>
+</div>

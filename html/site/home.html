@@ -1,0 +1,77 @@
+<style type="text/css">
+    .bg-dark {
+        margin-top: 20px;
+        background-color: rgb(33 33 33 / 53%)!important;
+        padding: 20px;
+        border-radius: 2px;
+    }
+</style>
+
+<div class="boann_city">
+    <section class="hero-area overlay">
+        <div class="video-container">
+            <video muted preload="metadata" autoplay="autoplay" loop="loop">
+                <source src="./assets/msfs.mp4" type="video/mp4">
+            </video>
+            <div class="block">
+                <h1>Flight Sim Academy</h1>
+                <h2>is the next generation to learn to fly</h2>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="links" class="boannLinks">
+
+        
+        <div class="container"> 
+            
+            
+            <div class="row">
+                
+                <!-- Twitch -->
+                <article class="col-md-12 col-sm-12 col-xs-12" ng-if="twitch.live == 'true'">
+                    <div class="card">
+                        <div id="harritvanbeek20"></div>
+                        <div class="card-body">
+                            <h3 class="card-title"> <span ng-if="twitch.live == 'true'">is live on</span> Twitch</h3>
+
+                            <p>
+                                <span ng-bind-html="twitch.game_name"></span><br />
+                                <span ng-bind-html="twitch.title"></span>
+                            </p>
+                        </div>                    
+                    </div>
+                </article>
+
+                <div class="title wow fadeInDown">
+                    <h2>Are you the next ?</h2>
+                    <div class="border"></div>
+                </div>
+
+                <article class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="card" title="You want to become a pilot ?">
+                        <img src="./assets/cockpit.jpg" class="img-responsive">
+                        <div class="card-body">
+                            <h2 class="card-title">You want to become a sim pilot ?</h2>
+                            <p class="white-text">At the Flight Sim Academy, quality is the standard. It`s not for nothing that we are regarded as one of the best flight schools in the world. We are a future-proof, progressive and high-quality training institute for you as a student. During your studies you will be taught by the best specialists in their field, you will fly on modern aircraft and simulators and you will receive a lot of personal guidance. We have all the qualities in-house to ensure that you are trained to become a high-quality sim pilot.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="card" title="You dont need any skills!">
+                        <img src="./assets/Skill-Words-5.jpg" class="img-responsive">
+                        <div class="card-body">
+                            <h2 class="card-title">You dont need any skills!</h2>
+                            <p class="white-text">If you want to learn, you don't need any skills.</p>
+                            <p class="white-text">you can start today even if you only have xbox and/or pc with mouse and keyboard and you need to install microsoft flight simulator 2020</p>
+                            <p>IT IS FREE, <a href="https://discord.gg/wb6pBDNTPd" target="_blank" class="btn btn-sm btn-success">Join Discord now</a></p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+</div>
