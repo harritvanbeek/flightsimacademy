@@ -2,6 +2,7 @@ if(document.getElementById('googlemap')){ //chek or this id element exist!
     var getZoom       = 3;
     var setZoom       = 4;
     var refresh       = 35000;
+    var flightRoute   = [];
     var who_json_url  = "../libraries/callback/callback_msfs.php?action=get_flights_json";
     
     function urlify(text) {
@@ -41,15 +42,21 @@ if(document.getElementById('googlemap')){ //chek or this id element exist!
         }
       });
     }
+
+
     
     function render_aircraft(locations){
-            console.log(locations);
             var infowindow = new google.maps.InfoWindow();
             bounds  = new google.maps.LatLngBounds();
             markers = new Array();
-    
+            
+            
             // loop through the locations of aircraft, making google map markers
             for (i = 0; i < locations.length; i++) {
+              
+              const gDate = new google.maps.LatLng(locations[i]["latitude"], locations[i]["longitude"]);
+              flightRoute.push(gDate);
+                            
               // create a new marker
                 var marker = new google.maps.Marker({
                     map: map,
@@ -65,25 +72,34 @@ if(document.getElementById('googlemap')){ //chek or this id element exist!
                         }
                 });
     
-                markers.push(marker);
+                //set tourplan by default on false!
+                //if(localStorage.getItem("tourplan") !== "showRoute"){
+                //  localStorage.setItem("tourplan", false);
+                //}
+
+                tourplans(flightRoute);
+                markers.push(marker);       
+
     
                 // add the marker position to the bounds object
                 bounds.extend(marker.getPosition());
     
                 // show a label when a marker is clicked
                 google.maps.event.addListener(marker, 'click', (function(marker, i) { return function() 
-                  {
-                      if(locations[i]["callsign"] !== 'N/A'){
+                  {   
+                      
+                      if(locations[i]["callsign"] !== 'N/A' || locations[i]["callsign"].length > 1){
                         localStorage.setItem("callsign", locations[i]["callsign"]);
+                        localStorage.setItem("tourplan", "showRoute");
                         $("#flight-info-wrapper").fadeIn();
-                      }
+                      }  
+                      
+                      tourplans(flightRoute);
                   }
-
-
-
-              })(marker, i));    
-    
-            } // loop
+                  
+                  
+                })(marker, i));                    
+            }
     
     
             // if a callsign is not passed in, zoom the map to it - else fit all the aircraft
@@ -95,6 +111,21 @@ if(document.getElementById('googlemap')){ //chek or this id element exist!
                   set_bounds = false;
                 }
             }
+    }
+
+    function tourplans(flightRoute){
+      //if(localStorage.getItem("tourplan") === "showRoute"){
+          //draw line from the paine    
+          var tourplan = new google.maps.Polyline({
+            path : flightRoute,
+            strokeColor:"#0000FF",
+            strokeOpacity:0.6,
+            strokeWeight:3
+        });
+
+        tourplan.setMap(map);
+      //}      
+      
     }
     
     function timer(){
@@ -122,15 +153,16 @@ if(document.getElementById('googlemap')){ //chek or this id element exist!
         draggable: true,
         scrollwheel: true,
 
-        disableDefaultUI: true,
-        //streetViewControl: false,
-        //scaleControl: false,
-        //navigationControl: false,
-        //mapTypeControl: false,
-        //zoomControl: false,
+        disableDefaultUI: true,        
         mapTypeId: google.maps.MapTypeId.TERRAIN
     });
     
+
+
+
+
+
+
     $('th').click(function(){
       var table = $(this).parents('table').eq(0)
       var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
@@ -149,8 +181,5 @@ if(document.getElementById('googlemap')){ //chek or this id element exist!
         fetch_aircraft(true);
         console.log(refresh);
         window.setInterval(timer, refresh);
-    
-        /*$("#googlemap").css("width","100%");
-        $("#googlemap").css("height","100%");*/
     });
 }
