@@ -8,20 +8,7 @@
     $fshub      =   NEW \api\fshub;
     $fshubID    =   2030;
 
-
-    //$flichtdata = $fshub->get("airline/2030/flight");
-
-    //debug( $fshub->get("pilot/7313/stats"), true );
-    //$flichtdata = $fshub->get("pilot/7313");
-    //debug($flichtdata);
-    
-
-
-    
     $userdata = $fshub->get("airline/{$fshubID}/pilot")->data;    
-    //debug( $userdata, true );
-    
-    
     foreach($userdata as $user)
         {   
             if($user->is_online > 0){
