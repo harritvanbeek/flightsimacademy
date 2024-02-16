@@ -45,17 +45,17 @@
                     "network"           =>  "Offline",
 
                     "currentLocation"   => [
-                        "altitude"               => -129,
+                        "altitude"               => "",
                         "heading"                => 134,
-                        "latitude"               => "52.3086010", //"44.830761217100",
-                        "longitude"              => "52.3086010", //"-0.704933425910",
+                        "latitude"               => "44.830761217100",
+                        "longitude"              => "-0.704933425910",
                         "groundspeed"            => 0,
                         "distance_remaining"     => 498,
                         "time_remaining"         => "00:00",
                         "distance_flown"         => 0,
-                        "departure_time"         => "14:34:00",
-                        "estimated_arrival_time" => "16:23:59",
-                        "time_flown"             => "00:04:55"
+                        "departure_time"         => "N/A",
+                        "estimated_arrival_time" => "N/A",
+                        "time_flown"             => "N/A"
                     ],
 
                     "aircraft" => [
@@ -66,19 +66,19 @@
                     ],
 
                     "departure" => [
-                        "name"      => "Bordeaux",
-                        "icao"      => "LFBD",
-                        "iata"      => "BOD",
-                        "latitude"  => "44.8283000",
-                        "longitude" => "-0.7155560"
-                    ],
-
-                    "arrival"     => [
                         "name"      => "Amsterdam Schiphol",
                         "icao"      => "EHAM",
                         "iata"      => "AMS",
                         "latitude"  => "52.3086010",
                         "longitude" => "4.7638900"
+                    ],
+
+                    "arrival"     => [
+                        "name"      => "N/A",
+                        "icao"      => "UNKOWN",
+                        "iata"      => "",
+                        "latitude"  => "",
+                        "longitude" => ""
                     ],
 
                 ];
