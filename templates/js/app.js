@@ -48,13 +48,6 @@ $(document).ready(
     }
  );
 
-var UrlData =   window.location.href.split("/")[3];
-    //$(".page-footer").removeClass("boann_footer");
-if(UrlData !== ''){
-    //$(".page-footer").addClass("boann_footer");
-};
-
-
 var boann = angular.module('BoannApp', ['ngSanitize', 'ui.router']);   
 var boannA = angular.module('BoannFlight', ['ngSanitize']); 
 
@@ -70,9 +63,6 @@ var uploadImages = function(PostURI){
             x;
 
             formData.append('file', files[0]);
-            
-            /*for(x = 0; x < files[0]; x = x + 1){
-            }*/
 
             xhr.onload = function(){
                 //var data = this.responseText;

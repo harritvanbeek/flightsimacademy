@@ -61,7 +61,8 @@
       <link rel="stylesheet" href="<?php echo THEMES; ?>/css/animate.css?v=<?php echo getdate()[0]; ?>">
       <link rel="stylesheet" href="<?php echo THEMES; ?>/css/boann.min.css?v=<?php echo getdate()[0]; ?>">
       
-      <link rel="stylesheet" href="<?php echo THEMES; ?>/css/flightmap.css?v=<?php echo getdate()[0]; ?>">
+     <link rel="stylesheet" href="<?php echo THEMES; ?>/css/flightmap.css?v=<?php echo getdate()[0]; ?>">
+      
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css?v=<?php echo getdate()[0]; ?>" />
      
       
@@ -104,8 +105,8 @@
 
           <div id="googlemap"></div>
           
-          
-          <div  id="flight-info-wrapper" class="panel-wrapper flight-info-warper">
+         
+          <div id="flight-info-wrapper" class="panel-wrapper flight-info-warper">
             <div id="airlineInfo">
                 <div class="callsign"> 
                     <span class="h3" ng-bind-html="flight.callsign"></span> 
@@ -118,6 +119,7 @@
                 </div>
             </div>
             <div class="clearfix"></div>
+            
             <div class="aircraft-image">
                 <a target="_blank" href="./#!/wall/">
                   <img class="planes" ng-src="{{flight.aircraft.images}}">

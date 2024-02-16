@@ -1,4 +1,4 @@
-/* body{
+body{
     background: #333;
     color: #333;
     font: normal 14px "Open Sans";
@@ -11,10 +11,7 @@
     position: relative;
     text-rendering: optimizeSpeed;
     width: 100% !important;
-} */
-
-
-
+}
 
 #content-container {
   position: absolute;
@@ -26,7 +23,6 @@
 
 
 /* flight-info-wrapper begin*/
-
 #flight-info-wrapper{
     display: none;
 }
