@@ -46,7 +46,7 @@ if(document.getElementById('googlemap')){ //chek or this id element exist!
 
     
     function render_aircraft(locations){
-            var infowindow = new google.maps.InfoWindow();
+            /* var infowindow = new google.maps.InfoWindow(); */
             bounds  = new google.maps.LatLngBounds();
             markers = new Array();
             
@@ -144,42 +144,23 @@ if(document.getElementById('googlemap')){ //chek or this id element exist!
       }
     }
     
-    var bounds = null;
-    var set_bounds = true;
-    var markers = [];
+    /* var markers     = [];
+    var bounds      = null;
+    var set_bounds  = true; */
     
-    var map = new google.maps.Map(document.getElementById('googlemap'), {
+    /* var map = new google.maps.Map(document.getElementById('googlemap'), {
         disableDoubleClickZoom: true,
         draggable: true,
         scrollwheel: true,
 
         disableDefaultUI: true,        
         mapTypeId: google.maps.MapTypeId.TERRAIN
-    });
-    
+    }); */
 
-
-
-
-
-
-    $('th').click(function(){
-      var table = $(this).parents('table').eq(0)
-      var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
-      this.asc = !this.asc
-      if (!this.asc){rows = rows.reverse()}
-      for (var i = 0; i < rows.length; i++){table.append(rows[i])}
-    })
-    
-    function getCellValue(row, index){
-        return $(row).children('td').eq(index).text()
-    }
-    
     // wait for jQuery
-    $(document).ready(function(){
+    /* $(document).ready(function(){
         console.log("Ready!");
         fetch_aircraft(true);
-        console.log(refresh);
         window.setInterval(timer, refresh);
-    });
+    }); */
 }

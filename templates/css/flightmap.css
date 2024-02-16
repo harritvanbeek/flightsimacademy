@@ -1,4 +1,4 @@
-body{
+/* body{
     background: #333;
     color: #333;
     font: normal 14px "Open Sans";
@@ -11,17 +11,10 @@ body{
     position: relative;
     text-rendering: optimizeSpeed;
     width: 100% !important;
-}
+} */
 
 
-#googlemap{
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-  overflow: hidden;
-  position: fixed !important;
-  transition: filter 200ms ease 0s;
-}
+
 
 #content-container {
   position: absolute;
@@ -36,19 +29,6 @@ body{
 
 #flight-info-wrapper{
     display: none;
-}
-
-.panel-wrapper {
-    /*padding: 20px;*/
-    position: fixed;
-    min-width: 15%;
-    max-height: calc(100vh - 6.3rem - 2.7rem);
-    top: 6.3rem;
-    left: 1rem;
-    border-radius: 1rem;
-    transition: bottom .5s;
-    background: #333;
-    animation: showPanel .3s ease-out both;
 }
 
 .callsign {

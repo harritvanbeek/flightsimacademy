@@ -11,7 +11,7 @@
         case "saveImages" :
             $pilotID    =   !empty($input->get("data")["pilotID"]) ? $input->get("data")["pilotID"] : NULL;
             if($pilotID){
-                $data       = file_get_contents("https://vamsys.io/statistics/map/0ce3546d-758f-4d07-a883-6d4daf4c925a");
+                $data       = file_get_contents("https://vamsys.io/statistics/map/0b59fc36-c9c9-4bbf-a431-6b66e8f23cea");
                 if(!empty($data)){
                     $jsonData   = json_decode($data, true);
                     foreach($jsonData as $flight){

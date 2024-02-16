@@ -24,8 +24,8 @@
     <script type="text/javascript" src="<?php echo THEMES; ?>/js/boann.min.js?v=<?php echo getdate()[0]; ?>"></script>
     <script type="text/javascript" src="<?php echo THEMES; ?>/js/boann.controller.min.js?v=<?php echo getdate()[0]; ?>"></script>
     
-    <script type="text/javascript" src="<?php echo THEMES; ?>/js/maps.js?v=<?php echo getdate()[0]; ?>"></script>
-    
+    <!-- <script type="text/javascript" src="<?php echo THEMES; ?>/js/maps.js?v=<?php echo getdate()[0]; ?>"></script>
+     -->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

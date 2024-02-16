@@ -104,6 +104,7 @@
 
           <div id="googlemap"></div>
           
+          
           <div  id="flight-info-wrapper" class="panel-wrapper flight-info-warper">
             <div id="airlineInfo">
                 <div class="callsign"> 
@@ -118,8 +119,8 @@
             </div>
             <div class="clearfix"></div>
             <div class="aircraft-image">
-                <a target="_blank" href="https://www.boann.eu/flightsim-academy/#!/wall/">
-                  <img width="334px" ng-src="{{flight.aircraft.images}}">
+                <a target="_blank" href="./#!/wall/">
+                  <img class="planes" ng-src="{{flight.aircraft.images}}">
                 </a>
 
                 <div>
@@ -210,7 +211,7 @@
               </div>
             </div>
 
-            <div class="route-info" style="width:334px; background:#e9ecef; padding: 10px;">
+            <div class="route-info" style="background:#e9ecef; padding: 10px;">
                 <span ng-bind-html="flight.route"></span>
             </div>
 
