@@ -38,7 +38,6 @@
             }else{
                 //set static data;                
                 $array[]    =   [
-                    "id"                => 4493289,
                     "callsign"          =>  "FSA58A",
                     "flight-number"     =>  "FS1318",
                     "route"             =>  "",
@@ -80,9 +79,7 @@
                         "latitude"  => "",
                         "longitude" => ""
                     ],
-
                 ];
-
                 return $array;
             }
         }
