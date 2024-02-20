@@ -45,9 +45,9 @@
 
                     "currentLocation"   => [
                         "altitude"               => "",
-                        "heading"                => 134,
-                        "latitude"               => "44.830761217100",
-                        "longitude"              => "-0.704933425910",
+                        "heading"                => -50,
+                        "latitude"               => "52.31223026863802",
+                        "longitude"              => "4.768255251503155",
                         "groundspeed"            => 0,
                         "distance_remaining"     => 498,
                         "time_remaining"         => "00:00",

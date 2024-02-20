@@ -61,10 +61,9 @@
       <link rel="stylesheet" href="<?php echo THEMES; ?>/css/animate.css?v=<?php echo getdate()[0]; ?>">
       <link rel="stylesheet" href="<?php echo THEMES; ?>/css/boann.min.css?v=<?php echo getdate()[0]; ?>">
       
-     <link rel="stylesheet" href="<?php echo THEMES; ?>/css/flightmap.css?v=<?php echo getdate()[0]; ?>">
+      <link rel="stylesheet" href="<?php echo THEMES; ?>/css/flightmap.css?v=<?php echo getdate()[0]; ?>">
       
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css?v=<?php echo getdate()[0]; ?>" />
-     
       
   <body ng-app="BoannFlight" class="boannApp">
       <div ng-controller="FlichtSimController">

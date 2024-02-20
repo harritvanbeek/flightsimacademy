@@ -132,11 +132,10 @@
         break;
 
         case "get_flights_json":            
-            foreach($vamsys->map() as $flight){
-                
+            foreach($vamsys->map() as $flight){                
                 $dataArray[]  = [
-                    "callsign"              =>  !empty($flight["callsign"])                                   ? "{$flight["callsign"]}"       :  "N/A",
-                    "flight-number"         =>  !empty($flight["flight-number"])                              ? "{$flight["flight-number"]}"  :  "N/A",
+                    "callsign"              =>  !empty($flight["callsign"])                                   ? "{$flight["callsign"]}"                       : "N/A",
+                    "flight-number"         =>  !empty($flight["flight-number"])                              ? "{$flight["flight-number"]}"                  : "N/A",
                     "heading"               =>  !empty($flight["currentLocation"]["heading"])                 ? "{$flight["currentLocation"]["heading"]}"     : "N/A",
                     "latitude"              =>  !empty($flight["currentLocation"]["latitude"])                ? "{$flight["currentLocation"]["latitude"]}"    : "N/A",
                     "longitude"             =>  !empty($flight["currentLocation"]["longitude"])               ? "{$flight["currentLocation"]["longitude"]}"   : "N/A",
@@ -218,7 +217,6 @@
                 }else{
                     echo json_encode($dataArray);
                 } */
-
         break;
 
 
