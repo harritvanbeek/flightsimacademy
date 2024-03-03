@@ -3,7 +3,7 @@
   <html lang="en">
   <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Flicht Sim Academy World Map</title>
+      <title>Flight Sim Academy World Map</title>
       <script type="application/ld+json">
         {
           "@context": "https://schema.org/",
