@@ -131,6 +131,24 @@
             }
         break;
 
+        case "getFlights" :
+            foreach($vamsys->map() as $flight){
+                $dataArray[]  = [
+                    "pilot"             => !empty($flight["pilot"]["username"])     ? "{$flight["pilot"]["username"]}"      : "N/A",
+                    "callsign"          => !empty($flight["callsign"])              ? "{$flight["callsign"]}"               : "N/A",
+                    "departure_name"    => !empty($flight["departure"]["name"])     ? "{$flight["departure"]["name"]}"      : "N/A",
+                    "arrival_name"      => !empty($flight["arrival"]["name"])       ? "{$flight["arrival"]["name"]}"        : "N/A",
+                    "aircraft"          => !empty($flight["aircraft"]["code"])      ? "{$flight["aircraft"]["code"]}"       : "N/A",
+                    "time_remaining"    => !empty($flight["currentLocation"]["time_remaining"])      ? "{$flight["currentLocation"]["time_remaining"]}"       : "N/A",
+                    
+                    
+                    "network"           => !empty($flight["network"])               ? "{$flight["network"]}"       : "N/A",
+                ];                
+            }
+
+            echo json_encode($dataArray);
+        break;
+
         case "get_flights_json":            
             foreach($vamsys->map() as $flight){                
                 $dataArray[]  = [

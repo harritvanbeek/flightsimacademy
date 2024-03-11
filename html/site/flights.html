@@ -21,18 +21,18 @@
                     <td colspan="10" class="text-center text-white">No flights found</td>                    
                 </tr>
                 
-                <!-- <tr>
+                <tr ng-repeat="flight in flights">
+                    <td>{{ flight.pilot }}</td>
+                    <td>{{ flight.callsign }}</td>
+                    <td>{{ flight.departure_name }}</td>
+                    <td>{{ flight.arrival_name }}</td>
+                    <td>{{ flight.aircraft }}</td>
+                    <td>{{ flight.time_remaining }}</td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr> -->
+                    <td>{{ flight.network }}</td>
+                </tr>
             </tbody>
         </table>
     </div>
