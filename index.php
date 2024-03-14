@@ -1,5 +1,4 @@
 <?php
-//test
 define('_BOANN', 1);
 if (defined('_BOANN'))
     {
