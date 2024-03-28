@@ -1,6 +1,4 @@
 <?php
-
-
     define('_BOANN', 1);
     define('BPATH_BASE',    dirname(__FILE__) );
 
