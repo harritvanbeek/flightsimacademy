@@ -149,32 +149,36 @@
             echo json_encode($dataArray);
         break;
 
-        case "get_flights_json":            
-            foreach($vamsys->map() as $flight){                
-                $dataArray[]  = [
-                    "callsign"              =>  !empty($flight["callsign"])                                   ? "{$flight["callsign"]}"                       : "N/A",
-                    "flight-number"         =>  !empty($flight["flight-number"])                              ? "{$flight["flight-number"]}"                  : "N/A",
-                    "heading"               =>  !empty($flight["currentLocation"]["heading"])                 ? "{$flight["currentLocation"]["heading"]}"     : "N/A",
-                    "latitude"              =>  !empty($flight["currentLocation"]["latitude"])                ? "{$flight["currentLocation"]["latitude"]}"    : "N/A",
-                    "longitude"             =>  !empty($flight["currentLocation"]["longitude"])               ? "{$flight["currentLocation"]["longitude"]}"   : "N/A",
-
-                    //get flicht info
-                    "registration"          =>  !empty($flight["aircraft"]["registration"])                   ? "{$flight["aircraft"]["registration"]}"      : "N/A",
-                    "registration_name"     =>  !empty($flight["aircraft"]["name"])                           ? "{$flight["aircraft"]["name"]}"              : "N/A",
-
-                    "departure_name"        =>  !empty($flight["departure"]["name"])                          ? "{$flight["departure"]["name"]}"              : "N/A",
-                    "departure_icao"        =>  !empty($flight["departure"]["icao"])                          ? "{$flight["departure"]["icao"]}"              : "N/A",
-                    "departure_time"        =>  !empty($flight["currentLocation"]["departure_time"])          ? "{$flight["currentLocation"]["departure_time"]}" : "N/A",
-
-                    "arrival_name"          =>  !empty($flight["arrival"]["name"])                            ? "{$flight["arrival"]["name"]}"                : "N/A",
-                    "arrival_icao"          =>  !empty($flight["arrival"]["icao"])                            ? "{$flight["arrival"]["icao"]}"                : "N/A",
-                    "arrival_time"          =>  !empty($flight["currentLocation"]["estimated_arrival_time"])  ? "{$flight["currentLocation"]["estimated_arrival_time"]}" : "N/A",                                                       
-                ];                    
-            }
+        case "get_flights_json":  
             
-            echo json_encode($dataArray);
+            switch("fshub"){
+                case "vamsys" :
+                    foreach($vamsys->map() as $flight){                
+                        $dataArray[]  = [
+                            "callsign"              =>  !empty($flight["callsign"])                                   ? "{$flight["callsign"]}"                       : "N/A",
+                            "flight-number"         =>  !empty($flight["flight-number"])                              ? "{$flight["flight-number"]}"                  : "N/A",
+                            "heading"               =>  !empty($flight["currentLocation"]["heading"])                 ? "{$flight["currentLocation"]["heading"]}"     : "N/A",
+                            "latitude"              =>  !empty($flight["currentLocation"]["latitude"])                ? "{$flight["currentLocation"]["latitude"]}"    : "N/A",
+                            "longitude"             =>  !empty($flight["currentLocation"]["longitude"])               ? "{$flight["currentLocation"]["longitude"]}"   : "N/A",
+        
+                            //get flicht info
+                            "registration"          =>  !empty($flight["aircraft"]["registration"])                   ? "{$flight["aircraft"]["registration"]}"      : "N/A",
+                            "registration_name"     =>  !empty($flight["aircraft"]["name"])                           ? "{$flight["aircraft"]["name"]}"              : "N/A",
+        
+                            "departure_name"        =>  !empty($flight["departure"]["name"])                          ? "{$flight["departure"]["name"]}"              : "N/A",
+                            "departure_icao"        =>  !empty($flight["departure"]["icao"])                          ? "{$flight["departure"]["icao"]}"              : "N/A",
+                            "departure_time"        =>  !empty($flight["currentLocation"]["departure_time"])          ? "{$flight["currentLocation"]["departure_time"]}" : "N/A",
+        
+                            "arrival_name"          =>  !empty($flight["arrival"]["name"])                            ? "{$flight["arrival"]["name"]}"                : "N/A",
+                            "arrival_icao"          =>  !empty($flight["arrival"]["icao"])                            ? "{$flight["arrival"]["icao"]}"                : "N/A",
+                            "arrival_time"          =>  !empty($flight["currentLocation"]["estimated_arrival_time"])  ? "{$flight["currentLocation"]["estimated_arrival_time"]}" : "N/A",                                                       
+                        ];                    
+                    }
+                    
+                    echo json_encode($dataArray);
+                break;
 
-                /* if(empty($dataArray)){                  
+                case "fshub" :
                     $fshubID    =   2030;
                     $userdata   =   $fshub->get("airline/{$fshubID}/pilot")->data; 
                     foreach($userdata as $user)
@@ -200,41 +204,39 @@
                                 "arrival_time"          =>  "N/A",
                             ];
                         }
-                    }                     
+                    }  
                     
+                    echo json_encode($dataArray);
+                break;
+            };      
                     
-                    if(empty($dataArray)){
-                        $data       = file_get_contents(dirname(dirname(dirname(__file__))).DS."flight.json");
-                        $jsonData   = json_decode($data, true);
-                        foreach($jsonData as $flight){
-                            $dataArray[]  = [
-                                "callsign"              =>  !empty($flight["callsign"])                                 ? "{$flight["callsign"]}"       :  "N/A",
-                                "flight-number"         =>  !empty($flight["flight-number"])                            ? "{$flight["flight-number"]}"  :  "N/A",
-                                "heading"               =>  !empty($flight["currentLocation"]["heading"])               ? "{$flight["currentLocation"]["heading"]}"     : "N/A",
-                                "latitude"              =>  !empty($flight["currentLocation"]["latitude"])              ? "{$flight["currentLocation"]["latitude"]}"    : "N/A",
-                                "longitude"             =>  !empty($flight["currentLocation"]["longitude"])             ? "{$flight["currentLocation"]["longitude"]}"   : "N/A",
-    
-                                //get flicht info
-                                "registration"          =>  !empty($flight["aircraft"]["registration"])                 ? "{$flight["aircraft"]["registration"]}"      : "N/A",
-                                "registration_name"     =>  !empty($flight["aircraft"]["name"])                         ? "{$flight["aircraft"]["name"]}"              : "N/A",
-    
-                                "departure_name"        =>  !empty($flight["departure"]["name"])                        ? "{$flight["departure"]["name"]}"              : "N/A",
-                                "departure_icao"        =>  !empty($flight["departure"]["icao"])                        ? "{$flight["departure"]["icao"]}"              : "N/A",
-                                "departure_time"        =>  !empty($flight["currentLocation"]["departure_time"])        ? "{$flight["currentLocation"]["departure_time"]}" : "N/A",
-    
-                                "arrival_name"          =>  !empty($flight["arrival"]["name"])                            ? "{$flight["arrival"]["name"]}"                : "N/A",
-                                "arrival_icao"          =>  !empty($flight["arrival"]["icao"])                            ? "{$flight["arrival"]["icao"]}"                : "N/A",
-                                "arrival_time"          =>  !empty($flight["currentLocation"]["estimated_arrival_time"])  ? "{$flight["currentLocation"]["estimated_arrival_time"]}" : "N/A",
-                            ];
-                        }
+                if(empty($dataArray)){
+                    $data       = file_get_contents(dirname(dirname(dirname(__file__))).DS."flight.json");
+                    $jsonData   = json_decode($data, true);
+                    foreach($jsonData as $flight){
+                        $dataArray[]  = [
+                            "callsign"              =>  !empty($flight["callsign"])                                 ? "{$flight["callsign"]}"       :  "N/A",
+                            "flight-number"         =>  !empty($flight["flight-number"])                            ? "{$flight["flight-number"]}"  :  "N/A",
+                            "heading"               =>  !empty($flight["currentLocation"]["heading"])               ? "{$flight["currentLocation"]["heading"]}"     : "N/A",
+                            "latitude"              =>  !empty($flight["currentLocation"]["latitude"])              ? "{$flight["currentLocation"]["latitude"]}"    : "N/A",
+                            "longitude"             =>  !empty($flight["currentLocation"]["longitude"])             ? "{$flight["currentLocation"]["longitude"]}"   : "N/A",
 
-                    }else{
-                        echo json_encode($dataArray);
+                            //get flicht info
+                            "registration"          =>  !empty($flight["aircraft"]["registration"])                 ? "{$flight["aircraft"]["registration"]}"      : "N/A",
+                            "registration_name"     =>  !empty($flight["aircraft"]["name"])                         ? "{$flight["aircraft"]["name"]}"              : "N/A",
+
+                            "departure_name"        =>  !empty($flight["departure"]["name"])                        ? "{$flight["departure"]["name"]}"              : "N/A",
+                            "departure_icao"        =>  !empty($flight["departure"]["icao"])                        ? "{$flight["departure"]["icao"]}"              : "N/A",
+                            "departure_time"        =>  !empty($flight["currentLocation"]["departure_time"])        ? "{$flight["currentLocation"]["departure_time"]}" : "N/A",
+
+                            "arrival_name"          =>  !empty($flight["arrival"]["name"])                            ? "{$flight["arrival"]["name"]}"                : "N/A",
+                            "arrival_icao"          =>  !empty($flight["arrival"]["icao"])                            ? "{$flight["arrival"]["icao"]}"                : "N/A",
+                            "arrival_time"          =>  !empty($flight["currentLocation"]["estimated_arrival_time"])  ? "{$flight["currentLocation"]["estimated_arrival_time"]}" : "N/A",
+                        ];
                     }
 
-                }else{
                     echo json_encode($dataArray);
-                } */
+                }
         break;
 
 
