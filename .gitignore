@@ -2,7 +2,6 @@
 *.mp4
 *.env
 
-/admin/
 /admin/dev/
 /admin/node_modules/
 /admin/gulpfile.js
