@@ -1,0 +1,50 @@
+        <div class="PageHeader-pageHeader">
+            <div class="PageHeaderLeft-pageHeaderLeft">
+                Tages
+            </div>                    
+        </div>
+
+        <div class="PageContent-pageContent Scroller-scroller Scroller-vertical">
+            <div class="DiscoverPage-discoverPageContent PageContent-innerPageContent">
+                <div style="margin-bottom: 20px">                    
+                    <div class="col-md-12">
+                        <div class="card dark_card">
+                            <div class="card-body">
+                                
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tag</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">
+                                                <input class="form-control" ng-model="form.tagName">
+                                            </td>
+                                            <td>
+                                                <button ng-click="addTag(form)" class="btn btn-sm btn-indigo">Opslaan</button>
+                                            </td>
+                                        </tr>
+
+                                        <tr ng-repeat="item in items">
+                                            <td class="text-white"> <span ng-bind-html="item.tags"></span>  / <span ng-bind-html="item.alias"></span></td>
+                                            <td class="text-white" ng-bind-html="item.date"></td>
+                                            <td class="text-white">
+                                                <a class="btn btn-sm btn-indigo">Action</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>                             
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

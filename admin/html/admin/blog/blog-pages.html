@@ -1,0 +1,45 @@
+        <div class="PageHeader-pageHeader">
+            <div class="PageHeaderLeft-pageHeaderLeft">
+                Blog Content
+            </div>                    
+        </div>
+
+        <div class="PageContent-pageContent Scroller-scroller Scroller-vertical">
+            <div class="DiscoverPage-discoverPageContent PageContent-innerPageContent">
+                <div style="margin-bottom: 20px">                    
+                    <div class="col-md-12">
+                        <div class="card dark_card">
+                            <div class="card-body">
+                                <a ui-sref="blog_new" class="float-right btn btn-sm btn-indigo">Nieuw Blog</a ui-sref="blog_new">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Alias</th>
+                                            <th>Date</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="item in items">
+                                            <td class="text-white" ng-bind-html="item.title"></td>
+                                            <td class="text-white" ng-bind-html="item.alias"></td>
+                                            <td class="text-white" ng-bind-html="item.post_data"></td>
+                                            <td class="text-white">
+                                                <a class="btn btn-sm btn-indigo" ng-click="view(item)">View</a>
+                                                <a class="btn btn-sm btn-indigo" ng-click="edit(item)">Edit</a>
+                                                <a class="btn btn-sm btn-indigo" ng-click="remove(item)">Delete</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>                             
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

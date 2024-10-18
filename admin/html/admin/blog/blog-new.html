@@ -1,0 +1,55 @@
+        <div class="PageHeader-pageHeader">
+            <div class="PageHeaderLeft-pageHeaderLeft">
+                Create Blog content
+            </div>                    
+        </div>
+
+        <div class="PageContent-pageContent Scroller-scroller Scroller-vertical">
+            <div class="DiscoverPage-discoverPageContent PageContent-innerPageContent">
+                <div style="margin-bottom: 20px">                    
+                    <div class="col-md-12">
+                        <div class="card dark_card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-9">                                        
+                                        <div class="boann_input">
+                                            <label>Title</label>
+                                            <input class="form-control input_boann" ng-model="form.title" ng-change="setAlias(form.title)">
+                                        </div>
+
+                                        <textarea ui-tinymce="tinymceOptions" ng-model="form.bericht"></textarea>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="boann_input">
+                                            <label>Images</label>
+                                            <input class="form-control input_boann">
+                                        </div>
+
+                                        <div class="boann_input">
+                                            <label>Catogory</label>
+                                            <select class="form-control browser-default" ng-model="form.catogory">
+                                                <option ng-repeat="cat in catogory" value="{{cat.uuid}}">{{cat.catogory}}</option>
+                                            </select>                                            
+                                        </div>
+
+                                        <div class="boann_input">
+                                            <label>Tags</label>                                           
+                                            <select class="form-control browser-default" ng-model="form.tags">
+                                                <option ng-repeat="tag in tags" value="{{tag.uuid}}">{{tag.tags}}</option>
+                                            </select> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>    
+                                <button ng-click="submit(form)" class="btn btn-success">Opslaan</button>                                    
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

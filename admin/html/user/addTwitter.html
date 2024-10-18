@@ -1,0 +1,75 @@
+        <div class="PageHeader-pageHeader">
+            <div class="PageHeaderLeft-pageHeaderLeft">
+                Add Tweet
+            </div>                    
+        </div>
+
+        <div class="PageContent-pageContent Scroller-scroller Scroller-vertical">
+            <div class="DiscoverPage-discoverPageContent PageContent-innerPageContent">
+                <div style="margin-bottom: 20px">                    
+                    <div class="col-md-7">
+                        <div class="card dark_card">
+                            <div class="card-body">
+                                
+                                <div class="boann_input">
+                                    <label>Title</label>
+                                    <input class="form-control input_boann" ng-model="data.title">
+                                </div>
+
+                                <div class="boann_input">
+                                    <label>Mension</label>
+                                    <input class="form-control input_boann" ng-model="data.mension">
+                                </div>
+
+                                <div class="boann_input">
+                                    <label>Tags</label>
+                                    <input class="form-control input_boann" ng-model="data.tags">
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="boann_input">
+                                            <label>Date Picker</label>
+                                            <div class="input-group mb-2 mr-sm-2">
+                                                <input type="text" class="form-control py-0 input_boann" id="datepicker" ng-model="data.date">
+                                                <div class="input-group-prepend mouse-click">
+                                                  <div class="input-group-text">
+                                                    <i class="far fa-calendar-alt"></i>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="boann_input">
+                                            <label>Time Picker</label>
+                                            <div class="input-group mb-2 mr-sm-2">
+                                                
+                                                <input type="text" id="basic_example_2" class="form-control py-0 input_boann" ng-model="data.time">
+                                                
+                                                <div class="input-group-prepend">
+                                                  <div class="input-group-text">
+                                                    <i class="far fa-clock"></i>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <textarea ui-tinymce="tinymceOptions" ng-model="data.bericht"></textarea>
+                                <button ng-click="submit(data)" class="btn btn-success">Opslaan</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
