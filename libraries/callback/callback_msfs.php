@@ -125,6 +125,8 @@
                     }
                 }
 
+                echo json_encode($dataArray);
+
                 if($dataArray){
                     echo json_encode($dataArray);
                 }
@@ -181,9 +183,17 @@
                 case "fshub" :
                     $fshubID    =   2030;
                     $userdata   =   $fshub->get("airline/{$fshubID}/pilot")->data; 
+                    
                     foreach($userdata as $user)
                     {   
+                        
                         if($user->is_online > 0){
+
+                            //echo "flight/{$fshubID}/{$user->id}/";
+                            //debug($fshub->get("flight/{$fshubID}/"));
+                            //debug($fshub->get("flight/{$user->id}/geo"));
+                            //die;
+
                             $dataArray[]  = [
                                 "callsign"              =>  "{$user->is_online}",
                                 "flight-number"         =>  "N/A",
@@ -207,6 +217,8 @@
                     }  
                     
                     echo json_encode($dataArray);
+
+                    die;
                 break;
             };      
                     
@@ -235,7 +247,10 @@
                         ];
                     }
 
+
                     echo json_encode($dataArray);
+
+                    die;
                 }
         break;
 
