@@ -1,13 +1,12 @@
-<?php if($this->_PAGE === "map"){
-    include $view->RenderPages();  
-    include "footerScripts.php"; 
-}else{ 
-    include "header.php"; ?>
 
-    <div ui-view="navbar"></div>
-    <div ui-view="mainpage"></div>
-    <div ui-view="footer"></div>
+<link rel="stylesheet" href="./css/style.css">
+<!-- https://www.schemecolor.com/tag/airlines -->
+<body>
+    
+    <header class="klmGroup_header">
+        <section>
+            test
+        </section>
+    </header>
 
-<?php 
-    include "footerScripts.php"; 
- } ?>
+</body>
